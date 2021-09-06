@@ -1,0 +1,22 @@
+   body *{
+      background: url('/angularjs.jpg');
+
+   }
+
+    .done-true {
+        text-decoration: line-through;
+        color: rgb(31, 45, 238);
+        text-decoration-color: black;
+      }
+  
+  .tareas{
+       color: rgb(4, 3, 7);
+       height: 150px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+  }
+  h2{
+      text-align: center;
+  }
+  

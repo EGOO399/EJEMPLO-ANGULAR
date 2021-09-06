@@ -1,0 +1,44 @@
+
+
+        <!doctype html>
+        <html ng-app="todoApp">
+          <head>
+              <!--referncia para angular js cdn (contend delivery network) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+            <script src="componentes.js"></script>
+            <link rel="stylesheet" href="estilo.css">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+          </head>
+          <body>
+            <div class="conteiner">
+                <img src="angularjs.jpg" class="rounded mx-auto d-block" alt=" ">
+                <h2>realizar tareas</h2>
+                <br>
+               <div class="tareas">
+                
+                <div ng-controller="TodoListController as todoList"> <!--ng-controler  definir el controlador de la aplicacion -->
+                  <span>{{todoList.remaining()}} de {{todoList.todos.length}} restantes</span>
+                  [ <a href="" ng-click="todoList.archive()">archive</a> ] <!--ng-click para agregar un evento que responda a un click-->
+                  <ul class="unstyled">
+                    <li ng-repeat="todo in todoList.todos"> <!--permite repetir una serie de tag HTML en función de un array  de datos de $scope-->
+                      <label class="checkbox">
+                        <input type="checkbox" ng-model="todo.done">
+                        <span class="done-{{todo.done}}">{{todo.text}}</span>
+                      </label>
+                    </li>
+                  </ul>
+                  <!--formulario para agregar tarreas-->
+                  <form ng-submit="todoList.addTodo()">      <!--llamamos la funcion todolist.addTodo-->
+                    <input type="text" ng-model="todoList.todoText"  size="30"
+                           placeholder="agrega una nueva tarea aqui">
+                    <input class="btn btn-outline-dark" type="submit" value="agregar">
+                  </form>
+                </div>
+               </div>
+            </div>
+          </body>
+        </html>
+    
+    
+
